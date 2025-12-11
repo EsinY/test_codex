@@ -10,26 +10,33 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="hero">
-    <div class="container hero__content">
-      <div>
-        <p class="eyebrow">Brow Studio • Красота & Уверенность</p>
+  <header class="hero" data-animate>
+    <div class="container hero__grid">
+      <div class="hero__text">
+        <p class="eyebrow">Brow Studio • Красота &amp; уверенность</p>
         <h1>Идеальные брови по записи</h1>
         <p class="lead">
-          Архитектура, окрашивание, ламинирование и коррекция бровей в уютной студии. Индивидуальный подход и
-          стерильные инструменты для вашего спокойствия.
+          Архитектура, окрашивание, ламинирование и коррекция бровей в уютной студии. Индивидуальный подход,
+          стерильные инструменты и ясные договорённости.
         </p>
 
-        <div class="hero__cta" data-animate>
-          <button class="btn" type="button" data-open-modal>Записаться</button>
-          <a class="btn btn--ghost" href="#services">Услуги и цены</a>
+        <div class="hero__seo">
+          <p>
+            С заботой о симметрии, густоте и стойкости результата. Подберу технику под особенности кожи и привычки
+            ухода, чтобы образ выглядел естественно каждый день.
+          </p>
+          <div class="hero__meta">
+            <span class="badge">Безопасные составы</span>
+            <span class="badge">5 минут от метро</span>
+            <span class="badge">Напоминания о визите</span>
+          </div>
         </div>
-        <div class="hero__stats" data-animate>
 
         <div class="hero__cta">
-          <a class="btn" href="#booking">Записаться</a>
-          <a class="btn btn--ghost" href="#services">Услуги и цены</a>
+          <button class="btn" type="button" data-open-modal>Оставить заявку</button>
+          <a class="btn btn--ghost" href="#booking">Записаться ниже</a>
         </div>
+
         <div class="hero__stats">
           <div>
             <span class="stat__number">500+</span>
@@ -45,21 +52,20 @@
           </div>
         </div>
       </div>
-      <div class="hero__card">
-        <div class="card__badge">Чистая эстетика</div>
-        <div class="card__image" aria-hidden="true"></div>
-        <p class="card__caption">Авторская форма бровей, мягкие переходы цвета, стойкие составы.</p>
+
+      <div class="hero__visual" aria-hidden="true">
+        <div class="hero__image"></div>
+        <div class="hero__caption card">
+          <div class="card__badge">Чистая эстетика</div>
+          <p class="card__caption">Авторская форма бровей, мягкие переходы цвета и стойкий блеск без пересушивания кожи.</p>
+        </div>
       </div>
     </div>
   </header>
 
   <main>
     <section id="services" class="section">
-
       <div class="container" data-animate>
-
-      <div class="container">
-
         <div class="section__header">
           <p class="eyebrow">Услуги</p>
           <h2>Комбо-предложения и индивидуальные решения</h2>
@@ -106,11 +112,7 @@
       </div>
     </section>
 
-
     <section class="section section--accent" data-animate>
-
-    <section class="section section--accent">
-
       <div class="container benefits">
         <div>
           <p class="eyebrow">Почему со мной спокойно</p>
@@ -146,42 +148,22 @@
       </div>
     </section>
 
-    <section id="booking" class="section">
-
-      <div class="container contact" data-animate>
-
-      <div class="container contact">
-
-        <div class="contact__info">
+    <section id="booking" class="section section--cta" data-animate>
+      <div class="container cta">
+        <div class="cta__text">
           <p class="eyebrow">Запись</p>
           <h2>Оставьте контакты — я свяжусь в течение часа</h2>
-          <p class="section__lead">Работаю в центре, 5 минут пешком от метро. Уточню удобное время и услуги, чтобы подготовить составы.</p>
-          <div class="contact__details">
-            <div>
-              <span class="badge badge--soft">Мессенджеры</span>
-              <p>Telegram: <a href="https://t.me/" target="_blank" rel="noopener">@brow.master</a><br>WhatsApp: <a href="https://wa.me/" target="_blank" rel="noopener">+7 900 000-00-00</a></p>
-            </div>
-            <div>
-              <span class="badge badge--soft">График</span>
-              <p>Ежедневно 10:00–20:00 по записи</p>
-            </div>
+          <p class="section__lead">Работаю в центре, 5 минут пешком от метро. Сообщите удобное время и услуги, чтобы подготовить составы.</p>
+          <div class="cta__note card">
+            <p class="card__caption">Письмо уходит на <strong>vp.163@mail.ru</strong>. Я перезвоню, чтобы согласовать детали записи.</p>
           </div>
         </div>
 
-        <div class="contact__cta card">
-
-        <form class="contact__form" aria-labelledby="booking-title">
-
+        <form class="contact__form" id="booking-form" data-form-name="Форма внизу страницы" aria-labelledby="booking-title">
           <div class="card__header">
-            <h3 id="booking-title">Форма обратной связи</h3>
+            <h3 id="booking-title">Заявка на запись</h3>
             <span class="badge">Связаться</span>
           </div>
-
-          <p class="section__lead">Кликните по кнопке, чтобы открыть форму записи во всплывающем окне и оставить заявку.</p>
-          <button class="btn" type="button" data-open-modal>Открыть форму</button>
-          <p class="form__hint">Нажимая кнопку, вы соглашаетесь на обработку персональных данных для связи по записи.</p>
-        </div>
-
           <label class="field">
             <span>Имя</span>
             <input type="text" name="name" placeholder="Как к вам обращаться" required />
@@ -205,18 +187,17 @@
           </label>
           <button class="btn" type="submit">Отправить заявку</button>
           <p class="form__hint">Нажимая кнопку, вы соглашаетесь на обработку персональных данных для связи по записи.</p>
+          <p class="form__status" data-status aria-live="polite"></p>
         </form>
-
       </div>
     </section>
   </main>
-
 
   <div class="modal" id="contact-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="booking-title-modal">
     <div class="modal__backdrop" data-close-modal></div>
     <div class="modal__dialog" role="document" tabindex="-1">
       <button class="modal__close" type="button" aria-label="Закрыть форму" data-close-modal>&times;</button>
-      <form class="contact__form" id="contact-form">
+      <form class="contact__form" id="contact-form" data-form-name="Попап-заявка">
         <div class="card__header">
           <h3 id="booking-title-modal">Форма обратной связи</h3>
           <span class="badge">Связаться</span>
@@ -244,7 +225,7 @@
         </label>
         <button class="btn" type="submit">Отправить заявку</button>
         <p class="form__hint">Письмо отправится на почту <strong>vp.163@mail.ru</strong>. После отправки я свяжусь с вами для подтверждения записи.</p>
-        <p class="form__status" aria-live="polite"></p>
+        <p class="form__status" data-status aria-live="polite"></p>
       </form>
     </div>
   </div>
@@ -257,7 +238,7 @@
       </div>
       <div class="footer__contacts">
         <a href="tel:+79000000000">+7 900 000-00-00</a>
-        <a href="mailto:brow.studio@example.com">brow.studio@example.com</a>
+        <a href="mailto:vp.163@mail.ru">vp.163@mail.ru</a>
       </div>
     </div>
   </footer>
@@ -265,8 +246,6 @@
   <script>
     const modal = document.getElementById('contact-modal');
     const modalDialog = modal.querySelector('.modal__dialog');
-    const form = document.getElementById('contact-form');
-    const formStatus = form.querySelector('.form__status');
     const openButtons = document.querySelectorAll('[data-open-modal]');
     const closeButtons = modal.querySelectorAll('[data-close-modal]');
 
@@ -302,25 +281,56 @@
       }
     });
 
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
+    const sendForm = async (form) => {
+      const status = form.querySelector('[data-status]');
+      if (!status) return;
+
+      status.textContent = 'Отправляем письмо...';
+      status.classList.remove('is-error');
+
       const formData = new FormData(form);
-      const name = formData.get('name') || 'Клиент';
-      const phone = formData.get('phone') || 'Не указан';
-      const service = formData.get('service') || 'Не выбрана';
-      const message = formData.get('message') || 'Без комментариев';
+      formData.append('form', form.dataset.formName || 'Заявка');
 
-      const subject = `Заявка на брови от ${name}`;
-      const body = `Имя: ${name}\nКонтакт: ${phone}\nУслуга: ${service}\nКомментарий: ${message}`;
-      const mailtoLink = `mailto:vp.163@mail.ru?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      try {
+        const response = await fetch('send.php', {
+          method: 'POST',
+          body: formData,
+        });
 
-      window.location.href = mailtoLink;
-      formStatus.textContent = 'Черновик письма открылся в вашем почтовом клиенте.';
-      form.reset();
-      setTimeout(closeModal, 400);
+        let data;
+        try {
+          data = await response.json();
+        } catch (parseError) {
+          throw new Error('Не получилось обработать ответ сервера. Попробуйте позже.');
+        }
+
+        if (!response.ok || !data.success) {
+          throw new Error(data.message || 'Не удалось отправить письмо. Попробуйте снова.');
+        }
+
+        status.textContent = data.message || 'Заявка отправлена.';
+        form.reset();
+
+        if (form.id === 'contact-form') {
+          setTimeout(closeModal, 500);
+        }
+      } catch (error) {
+        status.textContent = error.message;
+        status.classList.add('is-error');
+      }
+    };
+
+    ['contact-form', 'booking-form'].forEach((formId) => {
+      const form = document.getElementById(formId);
+      if (form) {
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+          sendForm(form);
+        });
+      }
     });
 
-    const animatedElements = document.querySelectorAll('[data-animate] .card, [data-animate]');
+    const animatedElements = document.querySelectorAll('[data-animate]');
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -335,20 +345,19 @@
 
     animatedElements.forEach((el) => observer.observe(el));
 
-    const heroCard = document.querySelector('.hero__card');
-    if (heroCard) {
-      heroCard.addEventListener('pointermove', (e) => {
-        const rect = heroCard.getBoundingClientRect();
-        const x = ((e.clientX - rect.left) / rect.width - 0.5) * 10;
-        const y = ((e.clientY - rect.top) / rect.height - 0.5) * 10;
-        heroCard.style.transform = `rotateX(${y * -1}deg) rotateY(${x}deg)`;
+    const heroImage = document.querySelector('.hero__image');
+    if (heroImage) {
+      heroImage.addEventListener('pointermove', (e) => {
+        const rect = heroImage.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width - 0.5) * 8;
+        const y = ((e.clientY - rect.top) / rect.height - 0.5) * 8;
+        heroImage.style.transform = `perspective(1200px) rotateX(${y * -1}deg) rotateY(${x}deg)`;
       });
 
-      heroCard.addEventListener('pointerleave', () => {
-        heroCard.style.transform = '';
+      heroImage.addEventListener('pointerleave', () => {
+        heroImage.style.transform = '';
       });
     }
   </script>
-
 </body>
 </html>
