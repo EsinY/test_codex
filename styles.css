@@ -23,7 +23,9 @@ body {
     var(--bg);
   color: var(--text);
   line-height: 1.6;
+
   min-height: 100vh;
+
 }
 
 img {
@@ -127,8 +129,10 @@ h4 {
   border-radius: calc(var(--radius) + 4px);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
+
   position: relative;
   overflow: hidden;
+
 }
 
 .card__badge {
@@ -150,8 +154,10 @@ h4 {
   height: 220px;
   position: relative;
   overflow: hidden;
+
   transform: translateZ(0);
   animation: floatGlow 8s ease-in-out infinite;
+
 }
 
 .card__image::after,
@@ -318,10 +324,12 @@ h4 {
   gap: 14px;
 }
 
+
 .contact__cta {
   display: grid;
   gap: 14px;
 }
+
 
 .field {
   display: grid;
@@ -379,6 +387,7 @@ textarea {
   gap: 12px;
   flex-wrap: wrap;
 }
+
 
 .modal {
   position: fixed;

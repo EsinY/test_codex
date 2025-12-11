@@ -19,11 +19,18 @@
           Архитектура, окрашивание, ламинирование и коррекция бровей в уютной студии. Индивидуальный подход и
           стерильные инструменты для вашего спокойствия.
         </p>
+
         <div class="hero__cta" data-animate>
           <button class="btn" type="button" data-open-modal>Записаться</button>
           <a class="btn btn--ghost" href="#services">Услуги и цены</a>
         </div>
         <div class="hero__stats" data-animate>
+
+        <div class="hero__cta">
+          <a class="btn" href="#booking">Записаться</a>
+          <a class="btn btn--ghost" href="#services">Услуги и цены</a>
+        </div>
+        <div class="hero__stats">
           <div>
             <span class="stat__number">500+</span>
             <span class="stat__label">довольных клиентов</span>
@@ -48,7 +55,11 @@
 
   <main>
     <section id="services" class="section">
+
       <div class="container" data-animate>
+
+      <div class="container">
+
         <div class="section__header">
           <p class="eyebrow">Услуги</p>
           <h2>Комбо-предложения и индивидуальные решения</h2>
@@ -95,7 +106,11 @@
       </div>
     </section>
 
+
     <section class="section section--accent" data-animate>
+
+    <section class="section section--accent">
+
       <div class="container benefits">
         <div>
           <p class="eyebrow">Почему со мной спокойно</p>
@@ -132,7 +147,11 @@
     </section>
 
     <section id="booking" class="section">
+
       <div class="container contact" data-animate>
+
+      <div class="container contact">
+
         <div class="contact__info">
           <p class="eyebrow">Запись</p>
           <h2>Оставьте контакты — я свяжусь в течение часа</h2>
@@ -148,18 +167,50 @@
             </div>
           </div>
         </div>
+
         <div class="contact__cta card">
+
+        <form class="contact__form" aria-labelledby="booking-title">
+
           <div class="card__header">
             <h3 id="booking-title">Форма обратной связи</h3>
             <span class="badge">Связаться</span>
           </div>
+
           <p class="section__lead">Кликните по кнопке, чтобы открыть форму записи во всплывающем окне и оставить заявку.</p>
           <button class="btn" type="button" data-open-modal>Открыть форму</button>
           <p class="form__hint">Нажимая кнопку, вы соглашаетесь на обработку персональных данных для связи по записи.</p>
         </div>
+
+          <label class="field">
+            <span>Имя</span>
+            <input type="text" name="name" placeholder="Как к вам обращаться" required />
+          </label>
+          <label class="field">
+            <span>Телефон или мессенджер</span>
+            <input type="tel" name="phone" placeholder="Например, +7 900 000-00-00" required />
+          </label>
+          <label class="field">
+            <span>Услуга</span>
+            <select name="service">
+              <option>Архитектура + окрашивание</option>
+              <option>Ламинирование</option>
+              <option>Коррекция</option>
+              <option>Не уверена, нужна консультация</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Комментарий</span>
+            <textarea name="message" rows="3" placeholder="Укажите желаемое время или особенности кожи"></textarea>
+          </label>
+          <button class="btn" type="submit">Отправить заявку</button>
+          <p class="form__hint">Нажимая кнопку, вы соглашаетесь на обработку персональных данных для связи по записи.</p>
+        </form>
+
       </div>
     </section>
   </main>
+
 
   <div class="modal" id="contact-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="booking-title-modal">
     <div class="modal__backdrop" data-close-modal></div>
@@ -210,6 +261,7 @@
       </div>
     </div>
   </footer>
+
   <script>
     const modal = document.getElementById('contact-modal');
     const modalDialog = modal.querySelector('.modal__dialog');
@@ -297,5 +349,6 @@
       });
     }
   </script>
+
 </body>
 </html>
