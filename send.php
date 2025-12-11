@@ -7,7 +7,6 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 header('Content-Type: application/json; charset=utf-8');
 
-$method = strtoupper($_SERVER['REQUEST_METHOD'] ?? '');
 
 // Поддерживаем preflight и GET-фоллбек для локальной статики
 if ($method === 'OPTIONS') {
@@ -19,6 +18,9 @@ $isPost = $method === 'POST';
 $isGet = $method === 'GET';
 
 if (!$isPost && !$isGet) {
+
+if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
+
     http_response_code(405);
     echo json_encode(['success' => false, 'message' => 'Метод не поддерживается']);
     exit;
@@ -28,6 +30,9 @@ require_once __DIR__ . '/phpmailer/Exception.php';
 require_once __DIR__ . '/phpmailer/PHPMailer.php';
 
 $input = filter_input_array($isPost ? INPUT_POST : INPUT_GET, [
+
+$input = filter_input_array(INPUT_POST, [
+
     'name' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
     'phone' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
     'service' => FILTER_SANITIZE_FULL_SPECIAL_CHARS,

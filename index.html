@@ -299,10 +299,14 @@
       const formData = new FormData(form);
       formData.append('form', form.dataset.formName || 'Заявка');
 
+
       const endpoint = new URL('send.php', window.location.origin);
 
       try {
         let response = await fetch(endpoint, {
+
+      try {
+        const response = await fetch('send.php', {
           method: 'POST',
           body: formData,
         });

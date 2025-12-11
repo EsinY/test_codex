@@ -24,10 +24,12 @@ body {
   color: var(--text);
   line-height: 1.6;
   min-height: 100vh;
+
 }
 
 html {
   scroll-behavior: smooth;
+
 }
 
 img {
@@ -102,6 +104,20 @@ h4 {
   padding: 90px 0 70px;
   position: relative;
   overflow: hidden;
+
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(255, 143, 177, 0.14), transparent 32%),
+    radial-gradient(circle at 20% 10%, rgba(184, 130, 242, 0.12), transparent 30%);
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+
 }
 
 .hero::after {
