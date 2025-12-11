@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brow Studio — Витрина услуг</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero__content">
+      <div>
+        <p class="eyebrow">Brow Studio • Красота & Уверенность</p>
+        <h1>Идеальные брови по записи</h1>
+        <p class="lead">
+          Архитектура, окрашивание, ламинирование и коррекция бровей в уютной студии. Индивидуальный подход и
+          стерильные инструменты для вашего спокойствия.
+        </p>
+        <div class="hero__cta">
+          <a class="btn" href="#booking">Записаться</a>
+          <a class="btn btn--ghost" href="#services">Услуги и цены</a>
+        </div>
+        <div class="hero__stats">
+          <div>
+            <span class="stat__number">500+</span>
+            <span class="stat__label">довольных клиентов</span>
+          </div>
+          <div>
+            <span class="stat__number">5 лет</span>
+            <span class="stat__label">опыта в brow-индустрии</span>
+          </div>
+          <div>
+            <span class="stat__number">10:00–20:00</span>
+            <span class="stat__label">ежедневно по записи</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__card">
+        <div class="card__badge">Чистая эстетика</div>
+        <div class="card__image" aria-hidden="true"></div>
+        <p class="card__caption">Авторская форма бровей, мягкие переходы цвета, стойкие составы.</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section__header">
+          <p class="eyebrow">Услуги</p>
+          <h2>Комбо-предложения и индивидуальные решения</h2>
+          <p class="section__lead">Все процедуры выполняются одноразовыми материалами и гипоаллергенными составами.</p>
+        </div>
+        <div class="grid grid--services">
+          <article class="card">
+            <div class="card__header">
+              <h3>Архитектура + окрашивание</h3>
+              <span class="price">2 200 ₽</span>
+            </div>
+            <p>Подбор формы по пропорциям лица, тщательная разметка и равномерный оттенок без пятен.</p>
+            <ul class="card__list">
+              <li>30–40 минут</li>
+              <li>Хна или мягкий краситель</li>
+              <li>Уход и укладка бровей</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="card__header">
+              <h3>Ламинирование</h3>
+              <span class="price">2 000 ₽</span>
+            </div>
+            <p>Фиксация идеального изгиба, блеск и плотность волосков на 6–8 недель.</p>
+            <ul class="card__list">
+              <li>Безопасные составы</li>
+              <li>Полировка и уход</li>
+              <li>Консультация по домашнему уходу</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="card__header">
+              <h3>Коррекция пинцетом/воском</h3>
+              <span class="price">1 000 ₽</span>
+            </div>
+            <p>Точная работа с естественной формой и плавными линиями без раздражения кожи.</p>
+            <ul class="card__list">
+              <li>15–20 минут</li>
+              <li>Охлаждающая сыворотка</li>
+              <li>Рекомендации по отращиванию</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--accent">
+      <div class="container benefits">
+        <div>
+          <p class="eyebrow">Почему со мной спокойно</p>
+          <h2>Комфорт, стерильность и понятные шаги</h2>
+          <p class="section__lead">От первой консультации до финального штриха — вы контролируете результат.</p>
+          <div class="benefits__list">
+            <div>
+              <h4>Чистота и безопасность</h4>
+              <p>Одноразовые расходники, обработка инструментов в крафт-пакетах, перчатки и маска.</p>
+            </div>
+            <div>
+              <h4>Индивидуальный дизайн</h4>
+              <p>Строим форму по вашим пропорциям, привычкам и желаемой густоте, а не по шаблону.</p>
+            </div>
+            <div>
+              <h4>Клиентский сервис</h4>
+              <p>Напоминания о записи, подбор домашнего ухода и помощь в восстановлении бровей.</p>
+            </div>
+          </div>
+        </div>
+        <div class="steps card">
+          <div class="card__header">
+            <h3>Как проходит запись</h3>
+            <span class="badge">4 шага</span>
+          </div>
+          <ol class="steps__list">
+            <li><strong>Заявка.</strong> Оставьте контакты в форме ниже или напишите в мессенджер.</li>
+            <li><strong>Подбор времени.</strong> Уточняем желаемые даты и длительность услуги.</li>
+            <li><strong>Встреча.</strong> Провожу процедуру, учитывая ваши пожелания и чувствительность кожи.</li>
+            <li><strong>Уход.</strong> Получаете рекомендации и поддерживающие средства.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="booking" class="section">
+      <div class="container contact">
+        <div class="contact__info">
+          <p class="eyebrow">Запись</p>
+          <h2>Оставьте контакты — я свяжусь в течение часа</h2>
+          <p class="section__lead">Работаю в центре, 5 минут пешком от метро. Уточню удобное время и услуги, чтобы подготовить составы.</p>
+          <div class="contact__details">
+            <div>
+              <span class="badge badge--soft">Мессенджеры</span>
+              <p>Telegram: <a href="https://t.me/" target="_blank" rel="noopener">@brow.master</a><br>WhatsApp: <a href="https://wa.me/" target="_blank" rel="noopener">+7 900 000-00-00</a></p>
+            </div>
+            <div>
+              <span class="badge badge--soft">График</span>
+              <p>Ежедневно 10:00–20:00 по записи</p>
+            </div>
+          </div>
+        </div>
+        <form class="contact__form" aria-labelledby="booking-title">
+          <div class="card__header">
+            <h3 id="booking-title">Форма обратной связи</h3>
+            <span class="badge">Связаться</span>
+          </div>
+          <label class="field">
+            <span>Имя</span>
+            <input type="text" name="name" placeholder="Как к вам обращаться" required />
+          </label>
+          <label class="field">
+            <span>Телефон или мессенджер</span>
+            <input type="tel" name="phone" placeholder="Например, +7 900 000-00-00" required />
+          </label>
+          <label class="field">
+            <span>Услуга</span>
+            <select name="service">
+              <option>Архитектура + окрашивание</option>
+              <option>Ламинирование</option>
+              <option>Коррекция</option>
+              <option>Не уверена, нужна консультация</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Комментарий</span>
+            <textarea name="message" rows="3" placeholder="Укажите желаемое время или особенности кожи"></textarea>
+          </label>
+          <button class="btn" type="submit">Отправить заявку</button>
+          <p class="form__hint">Нажимая кнопку, вы соглашаетесь на обработку персональных данных для связи по записи.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__content">
+      <div>
+        <p class="eyebrow">Brow Studio</p>
+        <p>Студия бровей с индивидуальным подходом и безопасными материалами.</p>
+      </div>
+      <div class="footer__contacts">
+        <a href="tel:+79000000000">+7 900 000-00-00</a>
+        <a href="mailto:brow.studio@example.com">brow.studio@example.com</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
