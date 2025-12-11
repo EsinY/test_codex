@@ -261,9 +261,17 @@
     };
 
     const closeModal = () => {
-      modal.classList.remove('is-open');
+      modal.classList.add('is-closing');
       modal.setAttribute('aria-hidden', 'true');
       toggleScrollLock(false);
+
+      modal.addEventListener(
+        'transitionend',
+        () => {
+          modal.classList.remove('is-open', 'is-closing');
+        },
+        { once: true }
+      );
     };
 
     openButtons.forEach((btn) => btn.addEventListener('click', openModal));
@@ -291,11 +299,26 @@
       const formData = new FormData(form);
       formData.append('form', form.dataset.formName || 'Заявка');
 
+
+      const endpoint = new URL('send.php', window.location.origin);
+
+      try {
+        let response = await fetch(endpoint, {
+
       try {
         const response = await fetch('send.php', {
           method: 'POST',
           body: formData,
         });
+
+        if (response.status === 405) {
+          const query = new URLSearchParams();
+          formData.forEach((value, key) => {
+            query.append(key, value.toString());
+          });
+
+          response = await fetch(`${endpoint}?${query.toString()}`);
+        }
 
         let data;
         try {
@@ -328,6 +351,18 @@
           sendForm(form);
         });
       }
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const targetId = link.getAttribute('href');
+        const target = document.querySelector(targetId);
+
+        if (target) {
+          event.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
     });
 
     const animatedElements = document.querySelectorAll('[data-animate]');

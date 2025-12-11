@@ -24,6 +24,12 @@ body {
   color: var(--text);
   line-height: 1.6;
   min-height: 100vh;
+
+}
+
+html {
+  scroll-behavior: smooth;
+
 }
 
 img {
@@ -98,6 +104,20 @@ h4 {
   padding: 90px 0 70px;
   position: relative;
   overflow: hidden;
+
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(255, 143, 177, 0.14), transparent 32%),
+    radial-gradient(circle at 20% 10%, rgba(184, 130, 242, 0.12), transparent 30%);
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+
 }
 
 .hero::after {
@@ -422,12 +442,21 @@ textarea {
   z-index: 999;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.28s ease;
 }
 
 .modal.is-open {
   opacity: 1;
   pointer-events: auto;
+}
+
+.modal.is-open .modal__dialog {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal.is-closing {
+  opacity: 0;
 }
 
 .modal__backdrop {
@@ -441,7 +470,9 @@ textarea {
   position: relative;
   width: min(520px, 92vw);
   z-index: 1;
-  animation: popIn 0.35s ease;
+  transform: translateY(12px);
+  opacity: 0;
+  transition: transform 0.26s ease, opacity 0.26s ease;
 }
 
 .modal__close {
