@@ -19,6 +19,13 @@
           Архитектура, окрашивание, ламинирование и коррекция бровей в уютной студии. Индивидуальный подход и
           стерильные инструменты для вашего спокойствия.
         </p>
+
+        <div class="hero__cta" data-animate>
+          <button class="btn" type="button" data-open-modal>Записаться</button>
+          <a class="btn btn--ghost" href="#services">Услуги и цены</a>
+        </div>
+        <div class="hero__stats" data-animate>
+
         <div class="hero__cta">
           <a class="btn" href="#booking">Записаться</a>
           <a class="btn btn--ghost" href="#services">Услуги и цены</a>
@@ -48,7 +55,11 @@
 
   <main>
     <section id="services" class="section">
+
+      <div class="container" data-animate>
+
       <div class="container">
+
         <div class="section__header">
           <p class="eyebrow">Услуги</p>
           <h2>Комбо-предложения и индивидуальные решения</h2>
@@ -95,7 +106,11 @@
       </div>
     </section>
 
+
+    <section class="section section--accent" data-animate>
+
     <section class="section section--accent">
+
       <div class="container benefits">
         <div>
           <p class="eyebrow">Почему со мной спокойно</p>
@@ -132,7 +147,11 @@
     </section>
 
     <section id="booking" class="section">
+
+      <div class="container contact" data-animate>
+
       <div class="container contact">
+
         <div class="contact__info">
           <p class="eyebrow">Запись</p>
           <h2>Оставьте контакты — я свяжусь в течение часа</h2>
@@ -148,11 +167,21 @@
             </div>
           </div>
         </div>
+
+        <div class="contact__cta card">
+
         <form class="contact__form" aria-labelledby="booking-title">
+
           <div class="card__header">
             <h3 id="booking-title">Форма обратной связи</h3>
             <span class="badge">Связаться</span>
           </div>
+
+          <p class="section__lead">Кликните по кнопке, чтобы открыть форму записи во всплывающем окне и оставить заявку.</p>
+          <button class="btn" type="button" data-open-modal>Открыть форму</button>
+          <p class="form__hint">Нажимая кнопку, вы соглашаетесь на обработку персональных данных для связи по записи.</p>
+        </div>
+
           <label class="field">
             <span>Имя</span>
             <input type="text" name="name" placeholder="Как к вам обращаться" required />
@@ -177,9 +206,48 @@
           <button class="btn" type="submit">Отправить заявку</button>
           <p class="form__hint">Нажимая кнопку, вы соглашаетесь на обработку персональных данных для связи по записи.</p>
         </form>
+
       </div>
     </section>
   </main>
+
+
+  <div class="modal" id="contact-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="booking-title-modal">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog" role="document" tabindex="-1">
+      <button class="modal__close" type="button" aria-label="Закрыть форму" data-close-modal>&times;</button>
+      <form class="contact__form" id="contact-form">
+        <div class="card__header">
+          <h3 id="booking-title-modal">Форма обратной связи</h3>
+          <span class="badge">Связаться</span>
+        </div>
+        <label class="field">
+          <span>Имя</span>
+          <input type="text" name="name" placeholder="Как к вам обращаться" required />
+        </label>
+        <label class="field">
+          <span>Телефон или мессенджер</span>
+          <input type="tel" name="phone" placeholder="Например, +7 900 000-00-00" required />
+        </label>
+        <label class="field">
+          <span>Услуга</span>
+          <select name="service">
+            <option>Архитектура + окрашивание</option>
+            <option>Ламинирование</option>
+            <option>Коррекция</option>
+            <option>Не уверена, нужна консультация</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Комментарий</span>
+          <textarea name="message" rows="3" placeholder="Укажите желаемое время или особенности кожи"></textarea>
+        </label>
+        <button class="btn" type="submit">Отправить заявку</button>
+        <p class="form__hint">Письмо отправится на почту <strong>vp.163@mail.ru</strong>. После отправки я свяжусь с вами для подтверждения записи.</p>
+        <p class="form__status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
 
   <footer class="footer">
     <div class="container footer__content">
@@ -193,5 +261,94 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    const modal = document.getElementById('contact-modal');
+    const modalDialog = modal.querySelector('.modal__dialog');
+    const form = document.getElementById('contact-form');
+    const formStatus = form.querySelector('.form__status');
+    const openButtons = document.querySelectorAll('[data-open-modal]');
+    const closeButtons = modal.querySelectorAll('[data-close-modal]');
+
+    const toggleScrollLock = (lock) => {
+      document.body.style.overflow = lock ? 'hidden' : '';
+    };
+
+    const openModal = () => {
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      toggleScrollLock(true);
+      modalDialog.focus({ preventScroll: true });
+    };
+
+    const closeModal = () => {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      toggleScrollLock(false);
+    };
+
+    openButtons.forEach((btn) => btn.addEventListener('click', openModal));
+    closeButtons.forEach((btn) => btn.addEventListener('click', closeModal));
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target.dataset.closeModal !== undefined) {
+        closeModal();
+      }
+    });
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const formData = new FormData(form);
+      const name = formData.get('name') || 'Клиент';
+      const phone = formData.get('phone') || 'Не указан';
+      const service = formData.get('service') || 'Не выбрана';
+      const message = formData.get('message') || 'Без комментариев';
+
+      const subject = `Заявка на брови от ${name}`;
+      const body = `Имя: ${name}\nКонтакт: ${phone}\nУслуга: ${service}\nКомментарий: ${message}`;
+      const mailtoLink = `mailto:vp.163@mail.ru?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      window.location.href = mailtoLink;
+      formStatus.textContent = 'Черновик письма открылся в вашем почтовом клиенте.';
+      form.reset();
+      setTimeout(closeModal, 400);
+    });
+
+    const animatedElements = document.querySelectorAll('[data-animate] .card, [data-animate]');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    animatedElements.forEach((el) => observer.observe(el));
+
+    const heroCard = document.querySelector('.hero__card');
+    if (heroCard) {
+      heroCard.addEventListener('pointermove', (e) => {
+        const rect = heroCard.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width - 0.5) * 10;
+        const y = ((e.clientY - rect.top) / rect.height - 0.5) * 10;
+        heroCard.style.transform = `rotateX(${y * -1}deg) rotateY(${x}deg)`;
+      });
+
+      heroCard.addEventListener('pointerleave', () => {
+        heroCard.style.transform = '';
+      });
+    }
+  </script>
+
 </body>
 </html>

@@ -23,6 +23,9 @@ body {
     var(--bg);
   color: var(--text);
   line-height: 1.6;
+
+  min-height: 100vh;
+
 }
 
 img {
@@ -126,6 +129,10 @@ h4 {
   border-radius: calc(var(--radius) + 4px);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
+
+  position: relative;
+  overflow: hidden;
+
 }
 
 .card__badge {
@@ -147,6 +154,10 @@ h4 {
   height: 220px;
   position: relative;
   overflow: hidden;
+
+  transform: translateZ(0);
+  animation: floatGlow 8s ease-in-out infinite;
+
 }
 
 .card__image::after,
@@ -313,6 +324,13 @@ h4 {
   gap: 14px;
 }
 
+
+.contact__cta {
+  display: grid;
+  gap: 14px;
+}
+
+
 .field {
   display: grid;
   gap: 6px;
@@ -368,6 +386,98 @@ textarea {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+}
+
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 12, 15, 0.7);
+  backdrop-filter: blur(6px);
+}
+
+.modal__dialog {
+  position: relative;
+  width: min(520px, 92vw);
+  z-index: 1;
+  animation: popIn 0.35s ease;
+}
+
+.modal__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: #0f121a;
+  color: var(--text);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.modal__close:hover {
+  transform: rotate(90deg) scale(1.05);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.form__status {
+  margin: 0;
+  min-height: 20px;
+  font-weight: 700;
+  color: var(--accent-2);
+}
+
+[data-animate] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes floatGlow {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: translateY(12px) scale(0.97);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
 }
 
 @media (max-width: 640px) {
